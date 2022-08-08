@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/yourrepositoryname/static/css/main.dda96812.css",
-    "main.js": "/yourrepositoryname/static/js/main.38cae38e.js",
-    "static/js/787.97ae423d.chunk.js": "/yourrepositoryname/static/js/787.97ae423d.chunk.js",
-    "index.html": "/yourrepositoryname/index.html",
-    "main.dda96812.css.map": "/yourrepositoryname/static/css/main.dda96812.css.map",
-    "main.38cae38e.js.map": "/yourrepositoryname/static/js/main.38cae38e.js.map",
-    "787.97ae423d.chunk.js.map": "/yourrepositoryname/static/js/787.97ae423d.chunk.js.map"
+    "main.css": "/Fake_App/static/css/main.dda96812.css",
+    "main.js": "/Fake_App/static/js/main.adc10bcd.js",
+    "static/js/787.97ae423d.chunk.js": "/Fake_App/static/js/787.97ae423d.chunk.js",
+    "index.html": "/Fake_App/index.html",
+    "main.dda96812.css.map": "/Fake_App/static/css/main.dda96812.css.map",
+    "main.adc10bcd.js.map": "/Fake_App/static/js/main.adc10bcd.js.map",
+    "787.97ae423d.chunk.js.map": "/Fake_App/static/js/787.97ae423d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dda96812.css",
-    "static/js/main.38cae38e.js"
+    "static/js/main.adc10bcd.js"
   ]
 }
