@@ -133,7 +133,7 @@ function App() {
     <>
       <Routes>
         <Route
-          path="/"
+          path="/Fake_App"
           element={
             <Home
               category={category}
