@@ -1,3 +1,7 @@
+.item-product {
+    border-color: red;
+}
+
 .list-product-cart {
     width: 80%;
     margin: auto;
@@ -45,4 +49,64 @@ td {
     text-align: center;
     border: 1px solid #ccc;
 
+}
+.btn-delete {
+    background: #ec1919;
+    color: white;
+    border: 2px solid #ba8585;
+    cursor: pointer;
+    height: 37px;
+    margin-top: 42px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+.btn-payment {
+    background: #4bb7e0;
+    height: 40px;
+    width: 10%;
+    color: white;
+    border-radius: 20px;
+    border: 1px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.btn-clear {
+    /* background: #f24d4d; */
+    background: #ec2626;
+    height: 40px;
+    width: 10%;
+    color: white;
+    border-radius: 20px;
+    border: 1px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.cart-total {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 25px;
+    font-family: "cursive";
+}
+.list {
+    text-align: center;
+    padding-top: 90px;
+}
+.cart-empty {
+    width: 10%;
+}
+.btn-buynow {
+    width: 15%;
+    height: 50px;
+    background: #dc2a2a;
+    border-radius: 35px;
+    color: white;
+    border: 0;
+    font-weight: 500;
+    cursor: pointer;
+}
+.pay-cart {
+    text-align: right;
+}
+.list p {
+    color: gray;
 }

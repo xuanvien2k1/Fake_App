@@ -4,6 +4,7 @@ import PopUp from "./component/PopUp/PopUp";
 import Home from "./container/Home/Home";
 import PageCart from "./container/PageCart/PageCart";
 import PageProductDetail from "./container/PageDetailProduct/PageProductDetail";
+
 function App() {
   const [show, setShow] = useState(false);
   const [news, setNews] = useState([]);
@@ -75,7 +76,29 @@ function App() {
     }
     setShow(true);
   };
+  
 
+  const addCart = (product) => {
+    const ProductExist = cart.find((item) => item.id === product.id);
+    if (ProductExist) {
+      setCart(
+        cart.map((item) =>
+          item.id === product.id
+            ? { ...ProductExist, quantity: ProductExist.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCart([
+        ...cart,
+        {
+          ...product,
+          quantity: 1,
+        },
+      ]);
+    }
+    
+  };
   // load all products
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -129,6 +152,9 @@ function App() {
   const closeModal = () => {
     setShow(false);
   };
+  const deleteAllProduct = () => {
+    setCart([]);
+  }
   return (
     <>
       <Routes>
@@ -141,6 +167,8 @@ function App() {
               sortPrice={sortPrice}
               news={news}
               getProductById={getProductById}
+              addCart ={addCart}
+              cart={cart}
             />
           }
         />
@@ -152,6 +180,7 @@ function App() {
               addToCart={addToCart}
               show={show}
               closeModal={closeModal}
+              cart={cart}
             />
           }
         />
@@ -165,10 +194,11 @@ function App() {
               decrease={decrease}
               disableIncrease={disableIncrease}
               disableDecrease={disableDecrease}
+              deleteAllProduct={deleteAllProduct}
             />
           }
         />
-        <Route path="/popup" element={<PopUp />} />
+        <Route path="/popup" element={<PopUp />} /> 
       </Routes>
     </>
   );

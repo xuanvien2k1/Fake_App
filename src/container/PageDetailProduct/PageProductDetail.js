@@ -8,10 +8,11 @@ function PageProductDetail({
   show,
   closeModal,
   getProductById,
+  cart
 }) {
   return (
     <>
-        <Header />
+        <Header cart= {cart} />
         <ProductDetail
           news={news}
           addToCart={addToCart}

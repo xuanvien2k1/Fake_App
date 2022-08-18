@@ -3,9 +3,12 @@ import { useParams } from "react-router-dom";
 import PopUp from "../PopUp/PopUp";
 
 function ProductDetail({ news, addToCart, show, closeModal }) {
+  // const clearCart = () => {
+  //   return dispatch ({type: "CLEAR_CART"});
+  // }
+
   const [number, setNumber] = useState(1);
   const { id } = useParams();
-
   const increaseNumber = () => {
     setNumber(number + 1);
   };
@@ -27,7 +30,7 @@ function ProductDetail({ news, addToCart, show, closeModal }) {
           return (
             <div className="information-product-detail" key={item.id}>
               <div className="image-main">
-                <img src={`${item.image}`} alt="" />
+                <img src={`${item.image}`} alt="..." />
               </div>
               <div className="content-product">
                 <div className="product-detail-name">
@@ -53,7 +56,11 @@ function ProductDetail({ news, addToCart, show, closeModal }) {
                   <button onClick={increaseNumber}>+</button>
                 </div>
                 <div className="btn-add-cart">
-                  <button type="submit" onClick={() => addToCart(item, number)}>
+                  <button
+                    className="btn-addcart"
+                    type="submit"
+                    onClick={() => addToCart(item, number)}
+                  >
                     Thêm vào giỏ hàng{" "}
                     <i className="fa-solid fa-cart-shopping"></i>
                   </button>

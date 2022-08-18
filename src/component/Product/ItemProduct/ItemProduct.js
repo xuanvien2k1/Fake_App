@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
-function ItemProduct({ item }) {
+function ItemProduct({ item, addCart }) {
   const rate = item["rating"];
   return (
     <>
+   
       <div className="item-product" key={item.id}>
         <div className="product-image">
           <Link to={`/product/${item.id}`}>
@@ -17,11 +18,22 @@ function ItemProduct({ item }) {
             </Link>
           </div>
           <div className="price">
+            <Link to ={`/products/${item.id}`}>
             <span className="text-price">{item.price}$</span>
+            </Link>
             <span className="count-buy">Đã bán {rate.count}</span>
           </div>
         </div>
+        {/* <div className="preview-product">
+        <Link to={`/product/${item.id}`}>Xem chi tiết</Link>
+        </div> */}
+        <div className="btn-add-cart">
+          <button type="submit" onClick={() => {if (window.confirm("Do you want to add to the cart?")) addCart(item)}}>
+            Thêm vào giỏ hàng <i className="fa-solid fa-cart-shopping"></i>
+          </button>
+        </div>
       </div>
+      
     </>
   );
 }

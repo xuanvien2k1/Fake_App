@@ -24,7 +24,7 @@ function ItemProductDetail({ pro }) {
           <span>{pro.decription}</span>
         </div>
         <div className="btn-add-cart">
-          <button>
+          <button className="btn-addcart">
             Thêm vào giỏ hàng <i className="fa-solid fa-cart-shopping"></i>
           </button>
         </div>

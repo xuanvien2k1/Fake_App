@@ -1,12 +1,15 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 function Logo() {
   return (
     <div className="logo">
-      <h1>
-        <Link to="/" className="logo-color">VIN STORE</Link>
+      <h1 className="logo-color" onClick={() => {window.location.reload();}}>
+       VIN STORE
       </h1>
     </div>
   );
 }
 export default Logo;
+
+
+

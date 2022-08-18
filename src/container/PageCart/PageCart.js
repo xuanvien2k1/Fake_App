@@ -2,6 +2,7 @@ import Cart from "../../component/Cart/Cart";
 import Header from "../../component/Header/Header";
 
 import "./PageCart.css";
+
 function PageCart({
   cart,
   deleteCart,
@@ -9,10 +10,11 @@ function PageCart({
   decrease,
   disableIncrease,
   disableDecrease,
+  deleteAllProduct
 }) {
   return (
     <>
-      <Header />
+      <Header cart={cart} />
       <Cart
         cart={cart}
         deleteCart={deleteCart}
@@ -20,7 +22,9 @@ function PageCart({
         decrease={decrease}
         disableIncrease={disableIncrease}
         disableDecrease={disableDecrease}
+        deleteAllProduct={deleteAllProduct}
       />
+      
     </>
   );
 }
