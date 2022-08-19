@@ -97,7 +97,7 @@ function Cart({
             )}
               </h5>
             <div>
-            <Link to="/Fake_App">
+            <Link to="/checkout">
           <button className="btn-payment">Checkout</button>
         </Link>
         <button

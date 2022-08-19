@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import PopUp from "./component/PopUp/PopUp";
+import CheckOut from "./container/Checkout/CheckOut";
 import Home from "./container/Home/Home";
 import PageCart from "./container/PageCart/PageCart";
 import PageProductDetail from "./container/PageDetailProduct/PageProductDetail";
 
 function App() {
   const [show, setShow] = useState(false);
+  const [showNoticePayment, setShowNoticePayment] = useState(false);
   const [news, setNews] = useState([]);
   const [cart, setCart] = useState([]);
   const [disableIncrease, setDisableIncrease] = useState(false);
@@ -14,7 +16,18 @@ function App() {
   const [category, setCategory] = useState([]);
   const [categoriesId, setCategotiesId] = useState("");
   const [sort, setSort] = useState("asc");
-
+  const [fullName, setFullName] = useState("");
+  const [number, setNumber] = useState("");
+  const [city, setCity] = useState([]);
+  const [district, setDistrict] = useState([]);
+  const [village, setVillage] = useState([]);
+  const [numberHome, setNumberHome] = useState("");
+  const [citySelected, setCitySelected] = useState("");
+  const [districtSelected, setDistrictSelected] = useState("");
+  const [villageSelected, setVillageSelected] = useState("");
+  const [disableDistrict, setDisableDistrict] = useState(true);
+  const [disableVillage, setDisableVillage] = useState(true);
+  const [payment, setPayment] = useState([]);
   // load category by ID
   const currentSelected = (e) => {
     setCategotiesId(e.target.value);
@@ -151,10 +164,98 @@ function App() {
 
   const closeModal = () => {
     setShow(false);
+    
   };
+  const closeNoticePayment = () => {
+    setShowNoticePayment(false);
+  }
   const deleteAllProduct = () => {
     setCart([]);
   }
+
+  const changeFullName = (e) => {
+     setFullName(e.target.value);
+  }
+  const changePhone = (e) => {
+    setNumber(e.target.value);
+ }
+ const changeNumberHome = (e) => {
+  setNumberHome(e.target.value);
+}
+  const changeCity = (e) => {
+    setCitySelected(e.target.value);
+    setDisableDistrict(false);
+  }
+
+
+   const changeDistrict = (e) => {
+    setDistrictSelected(e.target.value);
+    setDisableVillage(false);
+   }
+   const changeVillage = (e) => {
+   setVillageSelected(e.target.value);
+   
+   }
+  const paymentProduct = () => {
+    let cloneCart = [...cart];
+    let clonePayment = [...payment];
+    setPayment([{
+      ...clonePayment,
+      fullName:fullName,
+      phone : number,
+      city : citySelected,
+      district : districtSelected,
+      village : villageSelected,
+      numberHome : numberHome,
+      ...cloneCart
+    }])
+    setCart([]);
+    setShowNoticePayment(true);
+      
+
+   
+  }
+  
+
+
+
+
+  useEffect(() => {
+    fetch("https://api.mysupership.vn/v1/partner/areas/province")
+      .then((res) => res.json())
+      .then((json) => {
+        setCity(json.results);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (!citySelected) {
+      return;
+    } else {
+      fetch(
+        `https://api.mysupership.vn/v1/partner/areas/district?province=${citySelected}`
+      )
+        .then((res) => res.json())
+        .then((json) => {
+          setDistrict(json.results);
+        });
+    }
+  }, [citySelected]);
+
+
+  useEffect(() => {
+    if (!districtSelected) {
+      return;
+    } else {
+      fetch(
+        ` https://api.mysupership.vn/v1/partner/areas/commune?district=${districtSelected}`
+      )
+        .then((res) => res.json())
+        .then((json) => {
+          setVillage(json.results);
+        });
+    }
+  }, [districtSelected]);
   return (
     <>
       <Routes>
@@ -199,6 +300,24 @@ function App() {
           }
         />
         <Route path="/popup" element={<PopUp />} /> 
+        <Route path="/checkout" element={<CheckOut cart={cart} 
+                changeFullName={changeFullName}
+                changePhone={changePhone}
+                changeNumberHome={changeNumberHome}
+                city={city}
+                changeCity={changeCity}
+                district={district}
+                changeDistrict={changeDistrict}
+                village={village}
+                disableDistrict={disableDistrict}
+                disableVillage={disableVillage}
+                paymentProduct={paymentProduct}
+                changeVillage={changeVillage}
+                showNoticePayment={showNoticePayment}
+                payment={payment}
+                closeNoticePayment={closeNoticePayment}
+
+        />}/>
       </Routes>
     </>
   );
