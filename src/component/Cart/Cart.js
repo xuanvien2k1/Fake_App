@@ -120,7 +120,6 @@ function Cart({
           </div>
         </div>
       </div>
-      {/* Clear All Cart */}
     </div>
   );
 }

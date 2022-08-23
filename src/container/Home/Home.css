@@ -21,6 +21,16 @@
     align-items: center;
     color: white;
   }
+  .login {
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 27px;
+  }
+  .cart {
+    display: flex;
+    align-items: center;
+  }
   .cart i {
     font-size: 30px;
     position: relative;

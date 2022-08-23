@@ -1,0 +1,44 @@
+.form {
+    text-align: center;
+    width: 40%;
+    padding: 31px 0;
+    margin: 0 32%;
+    background-color: cadetblue;
+    margin-top: 45px;
+    border-radius: 73px;
+}
+.title-login {
+    text-align: center;
+    font-weight: 600;
+    font-size: 35px;
+    color: #0a332d;
+}
+.input-email, .input-pass {
+    height: 43px;
+    width: 63%;
+    border-radius: 36px;
+    padding-left: 20px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+.btn-login {
+    margin-top: 9px;
+    width: 22%;
+    height: 49px;
+    background: #d55f5f;
+    color: white;
+    border: 0;
+    border-radius: 23px;
+    cursor: pointer;
+}
+.request {
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.request:hover {
+    color: #e43e3e;
+}
+.btn-login:hover {
+    font-size: 20px;
+}

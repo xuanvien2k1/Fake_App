@@ -14,7 +14,10 @@ function Header({cart}) {
         </i>
       </Link>
       <Link to="/Fake_App">
-          <i class="fa-solid fa-house-chimney-crack"></i>
+          <i className="fa-solid fa-house-chimney-crack"></i>
+        </Link>
+        <Link to ="/login">
+        <p className="login">LogIn</p>
         </Link>
       </div>
       </div>

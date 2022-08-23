@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+
 import PopUp from "./component/PopUp/PopUp";
 import CheckOut from "./container/Checkout/CheckOut";
 import Home from "./container/Home/Home";
+import Log from "./container/Log/Log";
 import PageCart from "./container/PageCart/PageCart";
 import PageProductDetail from "./container/PageDetailProduct/PageProductDetail";
 
@@ -28,6 +30,7 @@ function App() {
   const [disableDistrict, setDisableDistrict] = useState(true);
   const [disableVillage, setDisableVillage] = useState(true);
   const [payment, setPayment] = useState([]);
+
   // load category by ID
   const currentSelected = (e) => {
     setCategotiesId(e.target.value);
@@ -38,7 +41,6 @@ function App() {
     }
     return news.filter((f) => f.category === categoriesId);
   };
-
   //load category
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/categories")
@@ -89,7 +91,6 @@ function App() {
     }
     setShow(true);
   };
-  
 
   const addCart = (product) => {
     const ProductExist = cart.find((item) => item.id === product.id);
@@ -110,7 +111,6 @@ function App() {
         },
       ]);
     }
-    
   };
   // load all products
   useEffect(() => {
@@ -164,61 +164,53 @@ function App() {
 
   const closeModal = () => {
     setShow(false);
-    
   };
   const closeNoticePayment = () => {
     setShowNoticePayment(false);
-  }
+  };
   const deleteAllProduct = () => {
     setCart([]);
-  }
+  };
 
   const changeFullName = (e) => {
-     setFullName(e.target.value);
-  }
+    setFullName(e.target.value);
+  };
   const changePhone = (e) => {
     setNumber(e.target.value);
- }
- const changeNumberHome = (e) => {
-  setNumberHome(e.target.value);
-}
+  };
+  const changeNumberHome = (e) => {
+    setNumberHome(e.target.value);
+  };
   const changeCity = (e) => {
     setCitySelected(e.target.value);
     setDisableDistrict(false);
-  }
+  };
 
-
-   const changeDistrict = (e) => {
+  const changeDistrict = (e) => {
     setDistrictSelected(e.target.value);
     setDisableVillage(false);
-   }
-   const changeVillage = (e) => {
-   setVillageSelected(e.target.value);
-   
-   }
+  };
+  const changeVillage = (e) => {
+    setVillageSelected(e.target.value);
+  };
   const paymentProduct = () => {
     let cloneCart = [...cart];
     let clonePayment = [...payment];
-    setPayment([{
-      ...clonePayment,
-      fullName:fullName,
-      phone : number,
-      city : citySelected,
-      district : districtSelected,
-      village : villageSelected,
-      numberHome : numberHome,
-      ...cloneCart
-    }])
+    setPayment([
+      {
+        ...clonePayment,
+        fullName: fullName,
+        phone: number,
+        city: citySelected,
+        district: districtSelected,
+        village: villageSelected,
+        numberHome: numberHome,
+        ...cloneCart,
+      },
+    ]);
     setCart([]);
     setShowNoticePayment(true);
-      
-
-   
-  }
-  
-
-
-
+  };
 
   useEffect(() => {
     fetch("https://api.mysupership.vn/v1/partner/areas/province")
@@ -241,7 +233,6 @@ function App() {
         });
     }
   }, [citySelected]);
-
 
   useEffect(() => {
     if (!districtSelected) {
@@ -268,7 +259,7 @@ function App() {
               sortPrice={sortPrice}
               news={news}
               getProductById={getProductById}
-              addCart ={addCart}
+              addCart={addCart}
               cart={cart}
             />
           }
@@ -299,25 +290,31 @@ function App() {
             />
           }
         />
-        <Route path="/popup" element={<PopUp />} /> 
-        <Route path="/checkout" element={<CheckOut cart={cart} 
-                changeFullName={changeFullName}
-                changePhone={changePhone}
-                changeNumberHome={changeNumberHome}
-                city={city}
-                changeCity={changeCity}
-                district={district}
-                changeDistrict={changeDistrict}
-                village={village}
-                disableDistrict={disableDistrict}
-                disableVillage={disableVillage}
-                paymentProduct={paymentProduct}
-                changeVillage={changeVillage}
-                showNoticePayment={showNoticePayment}
-                payment={payment}
-                closeNoticePayment={closeNoticePayment}
-
-        />}/>
+        <Route path="/popup" element={<PopUp />} />
+        <Route
+          path="/checkout"
+          element={
+            <CheckOut
+              cart={cart}
+              changeFullName={changeFullName}
+              changePhone={changePhone}
+              changeNumberHome={changeNumberHome}
+              city={city}
+              changeCity={changeCity}
+              district={district}
+              changeDistrict={changeDistrict}
+              village={village}
+              disableDistrict={disableDistrict}
+              disableVillage={disableVillage}
+              paymentProduct={paymentProduct}
+              changeVillage={changeVillage}
+              showNoticePayment={showNoticePayment}
+              payment={payment}
+              closeNoticePayment={closeNoticePayment}
+            />
+          }
+        />
+        <Route path="/login" element={<Log />} />
       </Routes>
     </>
   );
