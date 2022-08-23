@@ -26,38 +26,39 @@ const LogIn = () => {
       })
       .catch((error) => {
         console.log(error);
-        console.log(error.response);
+        // console.log(error.response);
+        alert("invalid characters");
       });
   };
 
   return (
-      <div className="form">
-        <p className="title-login">Login</p>
-        <div>
-          <input
-            className="input-email"
-            value={email}
-            onChange={handleEmail}
-            placeholder="Enter email"
-            name="email"
-            required
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            value={password}
-            onChange={handlePassword}
-            className="input-pass"
-            placeholder="Enter password"
-            name="password"
-            required
-          />
-        </div>
-          <button className="btn-login" type="submit" onClick={handleApi}>
-            Submit
-          </button>
+    <div className="form">
+      <p className="title-login">Login</p>
+      <div>
+        <input
+          className="input-email"
+          value={email}
+          onChange={handleEmail}
+          placeholder="Enter email"
+          name="email"
+          required
+        />
       </div>
+      <div>
+        <input
+          type="password"
+          value={password}
+          onChange={handlePassword}
+          className="input-pass"
+          placeholder="Enter password"
+          name="password"
+          required
+        />
+      </div>
+      <button className="btn-login" type="submit" onClick={handleApi}>
+        Submit
+      </button>
+    </div>
   );
 };
 
