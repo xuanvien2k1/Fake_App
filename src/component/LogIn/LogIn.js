@@ -24,7 +24,6 @@ const LogIn = () => {
         console.log(results.data);
         alert("Success Login");
       })
-      
       .catch((error) => {
         console.log(error);
         console.log(error.response);
