@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/homeLogIn/static/css/main.94fcfc9a.css",
-    "main.js": "/homeLogIn/static/js/main.d5762483.js",
-    "static/js/787.97ae423d.chunk.js": "/homeLogIn/static/js/787.97ae423d.chunk.js",
-    "index.html": "/homeLogIn/index.html",
-    "main.94fcfc9a.css.map": "/homeLogIn/static/css/main.94fcfc9a.css.map",
-    "main.d5762483.js.map": "/homeLogIn/static/js/main.d5762483.js.map",
-    "787.97ae423d.chunk.js.map": "/homeLogIn/static/js/787.97ae423d.chunk.js.map"
+    "main.css": "/Fake_App/static/css/main.94fcfc9a.css",
+    "main.js": "/Fake_App/static/js/main.456c0c44.js",
+    "static/js/787.97ae423d.chunk.js": "/Fake_App/static/js/787.97ae423d.chunk.js",
+    "index.html": "/Fake_App/index.html",
+    "main.94fcfc9a.css.map": "/Fake_App/static/css/main.94fcfc9a.css.map",
+    "main.456c0c44.js.map": "/Fake_App/static/js/main.456c0c44.js.map",
+    "787.97ae423d.chunk.js.map": "/Fake_App/static/js/787.97ae423d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.94fcfc9a.css",
-    "static/js/main.d5762483.js"
+    "static/js/main.456c0c44.js"
   ]
 }
