@@ -162,7 +162,6 @@ function App() {
 
     setCart(mapped);
   };
-
   const closeModal = () => {
     setShow(false);
   };
