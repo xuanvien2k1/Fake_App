@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import PopUp from "./component/PopUp/PopUp";
 import CheckOut from "./container/Checkout/CheckOut";
 import Home from "./container/Home/Home";
-import HomeLogIn from "./container/HomeLogIn/HomeLogIn";
+// import HomeLogIn from "./container/HomeLogIn/HomeLogIn";
 import Log from "./container/Log/Log";
 import PageCart from "./container/PageCart/PageCart";
 import PageProductDetail from "./container/PageDetailProduct/PageProductDetail";
@@ -264,7 +264,7 @@ function App() {
             />
           }
         />
-        <Route
+        {/* <Route
           path="/homeLogIn"
           element={
             <HomeLogIn
@@ -277,7 +277,7 @@ function App() {
               cart={cart}
             />
           }
-        />
+        /> */}
         <Route
           path="/product/:id"
           element={

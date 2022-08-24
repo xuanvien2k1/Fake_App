@@ -22,7 +22,7 @@ const LogIn = () => {
       .then((results) => {
         console.log(results.data);
         alert("Success Login");
-        window.location.assign("/homeLogIn");
+        // window.location.assign("/homeLogIn");
       })
 
       .catch((error) => {
