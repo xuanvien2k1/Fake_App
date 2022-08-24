@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom";
 import axios from "axios";
 import React, { useState } from "react";
 
@@ -23,7 +22,9 @@ const LogIn = () => {
       .then((results) => {
         console.log(results.data);
         alert("Success Login");
+        window.location.assign("/Fake_App");
       })
+
       .catch((error) => {
         console.log(error);
         // console.log(error.response);
