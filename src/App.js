@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import PopUp from "./component/PopUp/PopUp";
 import CheckOut from "./container/Checkout/CheckOut";
 import Home from "./container/Home/Home";
+import House from "./container/House/House";
 import Log from "./container/Log/Log";
 import PageCart from "./container/PageCart/PageCart";
 import PageProductDetail from "./container/PageDetailProduct/PageProductDetail";
@@ -263,10 +264,10 @@ function App() {
             />
           }
         />
-        {/* <Route
-          path="/homecustomer"
+        <Route
+          path="/house"
           element={
-            <HomeLogIn
+            <House
               category={category}
               currentSelected={currentSelected}
               sortPrice={sortPrice}
@@ -276,7 +277,7 @@ function App() {
               cart={cart}
             />
           }
-        /> */}
+        />
         <Route
           path="/product/:id"
           element={
