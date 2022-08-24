@@ -15,9 +15,9 @@ function Header({cart}) {
       <Link to="/Fake_App">
           <i className="fa-solid fa-house-chimney-crack"></i>
         </Link>
-        <Link to ="/login">
-        <p className="login">Login</p>
-        </Link>
+        <p className="login">
+            <i className="fa-solid fa-user-check"></i>
+          </p>
       </div>
       </div>
     </div>

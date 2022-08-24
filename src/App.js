@@ -251,7 +251,7 @@ function App() {
     <>
       <Routes>
         <Route
-          path="/Fake_App"
+          path="/homeLogIn"
           element={
             <Home
               category={category}
@@ -265,7 +265,7 @@ function App() {
           }
         />
         <Route
-          path="/homeLogIn"
+          path="/Fake_App"
           element={
             <HomeLogIn
               category={category}
