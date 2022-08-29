@@ -8,7 +8,7 @@ function Product({ getProductById, show, closeModal, addCart}) {
   return (
     <>
       <div id="product">
-        <h2>Sản Phẩm</h2>
+        <h2>Products</h2>
         <div className="product">
           {product.map((item, index) => {
             return <ItemProduct key={index} item={item} addCart={addCart} />;

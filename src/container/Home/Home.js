@@ -5,10 +5,10 @@ import FilterProduct from "../../component/Product/FilterProduct/FilterProduct";
 import Product from "../../component/Product/Product";
 
 
-function Home({ news,category, currentSelected, sortPrice, getProductById, addCart , cart}) {
+function Home({ news,category, currentSelected, sortPrice, getProductById, addCart , cart,user}) {
   return (
     <>
-      <Header cart={cart} />
+      <Header cart={cart} user={user} />
       <FilterProduct
         category={category}
         currentSelected={currentSelected}

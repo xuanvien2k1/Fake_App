@@ -1,11 +1,12 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import PopUp from "./component/PopUp/PopUp";
 import CheckOut from "./container/Checkout/CheckOut";
 import Home from "./container/Home/Home";
-import House from "./container/House/House";
 import Log from "./container/Log/Log";
+import Poster from "./container/Poster/Poster";
 import PageCart from "./container/PageCart/PageCart";
 import PageProductDetail from "./container/PageDetailProduct/PageProductDetail";
 
@@ -31,6 +32,17 @@ function App() {
   const [disableDistrict, setDisableDistrict] = useState(true);
   const [disableVillage, setDisableVillage] = useState(true);
   const [payment, setPayment] = useState([]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, setUser] = useState([]);
+
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
 
   // load category by ID
   const currentSelected = (e) => {
@@ -247,6 +259,27 @@ function App() {
         });
     }
   }, [districtSelected]);
+
+  const handleApi = (e) => {
+    e.preventDefault();
+    console.log("Success");
+    axios
+      .post("https://fakestoreapi.com/auth/login", {
+        username: email,
+        password: password,
+      })
+      .then((results) => {
+       setUser(results.config.data);
+        alert("Success Login");
+        window.location.assign("Fake_App");
+      })
+      .catch((error) => {
+        console.log(error);
+        // console.log(error.response);
+        alert("invalid characters");
+      });
+  };
+  console.log(user);
   return (
     <>
       <Routes>
@@ -261,21 +294,14 @@ function App() {
               getProductById={getProductById}
               addCart={addCart}
               cart={cart}
+              user={user}
             />
           }
         />
         <Route
-          path="/house"
+          path="/poster"
           element={
-            <House
-              category={category}
-              currentSelected={currentSelected}
-              sortPrice={sortPrice}
-              news={news}
-              getProductById={getProductById}
-              addCart={addCart}
-              cart={cart}
-            />
+            <Poster/>
           }
         />
         <Route
@@ -287,6 +313,7 @@ function App() {
               show={show}
               closeModal={closeModal}
               cart={cart}
+              user={user}
             />
           }
         />
@@ -301,6 +328,7 @@ function App() {
               disableIncrease={disableIncrease}
               disableDecrease={disableDecrease}
               deleteAllProduct={deleteAllProduct}
+              user={user}
             />
           }
         />
@@ -325,11 +353,17 @@ function App() {
               showNoticePayment={showNoticePayment}
               payment={payment}
               closeNoticePayment={closeNoticePayment}
+              user={user}
             />
           }
         />
-        <Route path="/login" element={<Log />} />
+        <Route path="/login" element={<Log handleEmail={handleEmail} 
+                                           handlePassword={handlePassword} 
+                                           email={email} 
+                                           password={password}
+                                           handleApi={handleApi} />} />
       </Routes>
+
     </>
   );
 }

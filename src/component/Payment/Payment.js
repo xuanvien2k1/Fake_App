@@ -40,7 +40,6 @@ function Payment({
         />
         <MyOrder cart={cart} paymentProduct={paymentProduct} />
       </div>
-
       <SuccessPayment
         show={showNoticePayment}
         closeNoticePayment={closeNoticePayment}

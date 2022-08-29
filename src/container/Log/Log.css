@@ -1,17 +1,9 @@
-.form {
-    text-align: center;
-    width: 40%;
-    padding: 31px 0;
-    margin: 0 32%;
-    background-color: cadetblue;
-    margin-top: 45px;
-    border-radius: 73px;
-}
+/* 
 .title-login {
     text-align: center;
     font-weight: 600;
     font-size: 35px;
-    color: #0a332d;
+    color: white;
 }
 .input-email, .input-pass {
     height: 43px;
@@ -25,13 +17,21 @@
     margin-top: 9px;
     width: 22%;
     height: 49px;
-    background: #d55f5f;
+    background: brown;
     border: 0;
     border-radius: 23px;
     cursor: pointer;
+    color: white;
 }
 .btn-submit {
     color: white;
+} */
+form {
+    position: relative;
+    display: block;
+    max-width: 392px;
+    width: 100%;
+    margin: 12px auto 0;
 }
 .request {
     font-size: 14px;
@@ -43,4 +43,173 @@
 }
 .btn-login:hover {
     font-size: 20px;
+}
+.loginSignupTemplate {
+    display: flex;
+    padding-top: 124px;
+}
+.illustration {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 50%;
+    padding-right: 68px;
+    flex: 1;
+}
+.loginForm {
+    margin: 0;
+    max-width: 248px;
+    --input-height: 40px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    padding-left: 4px;
+    color: var(--teflon);
+}
+.content h1 {
+    font-weight: 300;
+    font-size: 36px;
+    margin: 0;
+}
+.content p {
+    margin-top: 12px;
+    font-size: 15px;
+    margin: 0;
+}
+.actionButton {
+    margin-top: 48px;
+    width: 248px;
+}
+.figmaSSOButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 0 21px 0 12px;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 24%), 0 0 1px 0 rgb(0 0 0 / 12%);
+    background-color: #000;
+    margin-bottom: 8px;
+}
+a {
+    text-decoration: none;
+    font-weight: normal;
+}
+.figmaSSOButton .figmaSSOButtonText {
+    margin-left: 12px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: .22px;
+    color: #fff;
+}
+.figmaSSOButton .figmaText {
+    display: inline-block;
+    width: 46px;
+}
+.figmaSSOButton img,
+.googleSSOButton img {
+    width: 10%;
+}
+.figmaSSOButton .figmaSSOButtonText {
+    margin-left: 12px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: .22px;
+    color: #fff;
+}
+.googleSSOButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 0 21px 0 12px;
+    border-radius: 2px;
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 24%), 0 0 1px 0 rgb(0 0 0 / 12%);
+    background-color: #fff;
+}
+.googleSSOButton .googleSSOButtonText {
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: .22px;
+    color: rgba(0,0,0,.54);
+    pointer-events: none;
+}
+.googleSSOButtonText:hover {
+    color: rgba(0,0,0,1.54);
+}
+.actionButtons {
+    margin-top: 48px;
+    width: 248px;
+}
+.loginFormInput {
+    height: 35px;
+    display: flex;
+    width: 100%;
+    background-color: #f4f3f3;
+    border: 0;
+    margin-top: 10px;
+    font-size: 15px;
+}
+.loginFormButton {
+    width: 100%;
+    background: #419bf9;
+    border: 0;
+    height: 41px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 15px;
+}
+hr {
+    margin: 31px 104px;
+    width: 40px;
+    height: 0;
+    opacity: .5;
+    border-radius: 1px;
+    background-color: var(--karl);
+}
+.formWrapper {
+    display: flex;
+    width: 100%;
+}
+.loginWithSSOContainer {
+    margin-top: 12px;
+    width: 100%;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+}
+.loginWithSSOContainer a {
+    color: #419bf9;
+    cursor: pointer;
+}
+#lishare img {
+    width: 11%;
+}
+#fbshare img {
+    height: 30px;
+}
+#lishare,
+#fbshare {
+    margin-left: 30px;
+}
+.loginPageFooter {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    line-height: 18px;
+}
+.loginPageFooter a {
+    color: #419bf9;
+}
+.noAccount a {
+    color: #419bf9;
+    font-weight: 700;
+}
+.loginPageFooter :not(:first-child) {
+    padding-top: 10px;
 }

@@ -35,6 +35,7 @@ function ProductDetail({ news, addToCart, show, closeModal }) {
               <div className="content-product">
                 <div className="product-detail-name">
                   <p>{item.title}</p>
+                  <span class="sale">-40%</span>
                 </div>
                 <div className="star">
                   <span className="rate-star">

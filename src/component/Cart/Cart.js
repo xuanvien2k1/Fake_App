@@ -16,7 +16,7 @@ function Cart({
           <img
             className="cart-empty"
             src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/cart/9bdd8040b334d31946f49e36beaf32db.png"
-            alt=""
+            alt="..."
           />
           <p>Không có gì hết nha!</p>
           <Link to="/Fake_App">
@@ -34,11 +34,11 @@ function Cart({
           <table>
             <tbody>
               <tr>
-                <td>Ảnh Sản Phẩm</td>
-                <td>Tên Sản Phẩm</td>
-                <td>Giá SP</td>
-                <td>Số Lượng</td>
-                <td>Thành Tiền</td>
+                <td>Picture</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Amount</td>
+                <td>Total</td>
                 <td></td>
               </tr>
               {cart.map((item, index) => {

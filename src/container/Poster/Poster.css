@@ -1,0 +1,32 @@
+.navbar {
+  padding: 0 200px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0px 10px #726060;
+  align-items: center;
+}
+.btn-log {
+  color: black;
+  cursor: pointer;
+  font-size: 23px;
+}
+.btn-log:hover {
+  text-shadow: 1px 1px 2px #1b1a1a, 0 0 4px black;
+  color: white;
+}
+.banner img {
+  width: 100%;
+}
+.name-logo {
+  font-size: 37px;
+  margin: 28px 0;
+  cursor: pointer;
+}
+.fb {
+  color: #4444ca;
+  cursor: pointer;
+}
+.yt {
+  color: #ff0000;
+  cursor: pointer;
+}

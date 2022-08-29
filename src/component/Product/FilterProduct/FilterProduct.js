@@ -3,9 +3,9 @@ function FilterProduct({ category, currentSelected, sortPrice }) {
     <div className="filter-product">
       <div className="sort-by-product">
         <div className="filter-category">
-          <span>Danh mục sản phẩm :</span>
+          <span>Category :</span>
           <select onChange={(e) => currentSelected(e)}>
-            <option value="">Tất cả</option>;
+            <option value="">All</option>;
             {category.map((cat, index) => {
               return (
                 <option key={index} value={cat}>
@@ -16,7 +16,7 @@ function FilterProduct({ category, currentSelected, sortPrice }) {
           </select>
         </div>
         <div className="filter-price">
-          <span>Giá</span>
+          <span>Price :</span>
           <select onChange={(e) => sortPrice(e)}>
             <option value="asc">Từ thấp đến cao</option>
             <option value="desc">Từ cao đến thấp</option>
