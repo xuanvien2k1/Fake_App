@@ -3,10 +3,26 @@ body {
   padding: 0;
 }
 .logo {
-  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 .logo-color {
-  color: black;
+  letter-spacing: 5px;
+  font-weight: 900;
+  font-size: 1.75rem;
+  letter-spacing: 0.206rem;
+  line-height: 3.438rem;
+  font-family: "Montserrat";
+  background: linear-gradient(
+    102.78deg,
+    #6687e9 29.14%,
+    #b082d5 53.97%,
+    #ed7ec4 77.85%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 29px 0 13px 0;
+  cursor: pointer;
 }
 .header-bar {
   width: 80%;
@@ -18,9 +34,25 @@ body {
   align-items: center;
   color: white;
 }
-.login {
+.user {
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 3px;
+  line-height: 3.438rem;
+  font-family: "Montserrat";
+  background: linear-gradient(
+    102.78deg,
+    #6687e9 29.14%,
+    #b082d5 53.97%,
+    #ed7ec4 77.85%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 22px;
+}
+.logout {
   cursor: pointer;
-  font-size: 27px;
+  font-size: 19px;
   margin: 0;
 }
 .cart {
@@ -30,12 +62,12 @@ body {
 .cart i {
   font-size: 30px;
   position: relative;
-  color: black;
+  color: #a69c9c;
 }
 .cart span {
   font-size: 11px;
   font-weight: normal;
-  background-color: #d33232;
+  background-color: #ff0000;
   position: absolute;
   top: -5px;
   left: 20px;
@@ -45,6 +77,12 @@ body {
   line-height: 20px;
   border-radius: 50%;
   color: white;
+  background: linear-gradient(
+    102.78deg,
+    #6687e9 29.14%,
+    #b082d5 53.97%,
+    #ed7ec4 77.85%
+  );
 }
 .sort-by-product {
   width: 80%;
@@ -160,40 +198,43 @@ body {
 }
 
 .dropdown .dropbtn {
-  font-size: 16px;
+  margin-left: 20px;
   border: 0;
   outline: none;
-  color: black;
   background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.dropdown-content a:hover {
-  color: black;
+  width: 41px;
+  cursor: pointer;
 }
 
 .dropdown-content {
+  border-radius: 10px;
+  align-items: center;
+  height: 180px;
   display: none;
   position: absolute;
-  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
   z-index: 1;
-  width: 8%;
-  height: 121px;
-  border-radius: 12px;
-  background: #caeded;
+  background: linear-gradient(
+    102.78deg,
+    #6687e9 29.14%,
+    #b082d5 53.97%,
+    #ed7ec4 77.85%
+  );
 }
 
 .dropdown-content a {
   float: none;
-  color: gray;
+  color: white;
   padding: 0 20px;
   text-decoration: none;
   display: block;
   text-align: left;
   cursor: pointer;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
+}
+.menu-burger-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

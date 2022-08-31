@@ -11,7 +11,7 @@ function PageProductDetail({
   cart
 }) {
   return (
-    <>
+    <div className="bg">
         <Header cart= {cart} />
         <ProductDetail
           news={news}
@@ -20,7 +20,7 @@ function PageProductDetail({
           closeModal={closeModal}
           getProductById={getProductById}
         />
-    </>
+    </div>
   );
 }
 

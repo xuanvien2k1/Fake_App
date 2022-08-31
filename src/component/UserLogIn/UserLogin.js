@@ -1,30 +1,61 @@
 import { Link } from "react-router-dom";
+// import Loading from "../Loading/Loading";
+// import { useState } from "react";
 
 const UserLogIn = () => {
+  // const [loading, setLoading] = useState(true)
+  // useEffect(() => {
+  //   setLoading(false)
+  // }
+  // )
   return (
-    <div>
-      <div className="navbar">
-        <p className="name-logo">Vin Store</p>
-        <div className="">
+    <>
+    <div className="navbar">
+        <div className="logo-nav">
+          <img
+            src="https://www.orbs.com/assets/img/common/logo.svg"
+            alt="..."
+          />
+          <p className="name-logo">Vin Store</p>
+        </div>
+        <div className="logo-banner">
           <Link to="/login" className="btn-log">
             Login
           </Link>
-          &nbsp;{" "}
-          <a className="fb" href="https://www.facebook.com/" target="_blank">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          &nbsp;&nbsp;
-          <a className="yt" href="https://www.youtube.com/" target="_blank">
-            <i class="fa-brands fa-youtube"></i>
-          </a>
+          <ul className="navbar-top-flags">
+            <li>
+              <a href=".">
+                <img
+                  src="https://www.orbs.com/assets/img/navbar/usa.svg"
+                  alt="..."
+                />
+              </a>
+            </li>
+            <li>
+              <a href=".">
+                <img
+                  src="https://www.orbs.com/assets/img/navbar/korea.svg"
+                  alt="..."
+                />
+              </a>
+            </li>
+            <li>
+              <a href=".">
+                <img
+                  src="https://www.orbs.com/assets/img/navbar/japan.svg"
+                  alt="..."
+                />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
       <div>
         <div className="banner">
-          <img src="https://img.freepik.com/free-psd/horizontal-banner-template-big-sale-with-woman-shopping-bags_23-2148786755.jpg?w=2000" />
+          <img src="https://img.freepik.com/free-psd/clothing-designer-cup-coffee-mock-up_23-2148654793.jpg?w=2000" alt="" />
         </div>
       </div>
-    </div>
+      </>
   );
 };
 export default UserLogIn;

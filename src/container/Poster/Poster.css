@@ -1,5 +1,13 @@
+ol, ul {
+    list-style: none;
+    display: flex;
+    padding-left: 24px;
+}
+ul li {
+  padding-right: 10px;
+}
 .navbar {
-  padding: 0 200px;
+  padding: 0 100px;
   display: flex;
   justify-content: space-between;
   box-shadow: 0px 0px 10px #726060;
@@ -17,10 +25,22 @@
 .banner img {
   width: 100%;
 }
+.logo-nav {
+    display: flex;
+    align-items: center;
+}
 .name-logo {
-  font-size: 37px;
-  margin: 28px 0;
-  cursor: pointer;
+    padding-left: 10px;
+    font-weight: 900;
+    font-size: 1.75rem;
+    letter-spacing: 0.206rem;
+    line-height: 3.438rem;
+    font-family: "Montserrat";
+    letter-spacing: -0.009rem;
+    background: linear-gradient(102.78deg, #6687e9 29.14%, #b082d5 53.97%, #ed7ec4 77.85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 29px 0 13px 0;
 }
 .fb {
   color: #4444ca;
@@ -29,4 +49,8 @@
 .yt {
   color: #ff0000;
   cursor: pointer;
+}
+.logo-banner {
+  display: flex;
+  align-items: center;
 }

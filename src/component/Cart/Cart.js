@@ -12,6 +12,11 @@ function Cart({
   if (cart.length === 0) {
     return (
       <div className="list-product-cart">
+        <img
+          src="https://www.orbs.com/assets/img/network/section-2-top.png"
+          alt="..."
+          className="icon-green"
+        />
         <div className="list">
           <img
             className="cart-empty"
@@ -28,7 +33,7 @@ function Cart({
   }
   return (
     <div className="cart">
-      <div className="list-product-cart">
+      <div className="listCart">
         <h1>Giỏ Hàng</h1>
         <div className="list">
           <table>
@@ -103,7 +108,7 @@ function Cart({
               )}
               $
             </h5>
-            <div>
+            <div className="btn-function">
               <Link to="/checkout">
                 <button className="btn-payment">Checkout</button>
               </Link>

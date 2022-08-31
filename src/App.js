@@ -10,6 +10,7 @@ import Poster from "./container/Poster/Poster";
 import PageCart from "./container/PageCart/PageCart";
 import PageProductDetail from "./container/PageDetailProduct/PageProductDetail";
 
+
 function App() {
   const [show, setShow] = useState(false);
   const [showNoticePayment, setShowNoticePayment] = useState(false);
@@ -35,7 +36,13 @@ function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState([]);
+  const [authTokens, setAuthTokens] = useState(
+    localStorage.getItem("tokens") || ""
+  );
 
+  const handleLogout = () => {
+    localStorage.removeItem("tokens");
+  }
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -269,8 +276,11 @@ function App() {
         password: password,
       })
       .then((results) => {
-       setUser(results.config.data);
+        setAuthTokens(results.data);
+        setUser(results.config.data);
+        
         alert("Success Login");
+        localStorage.setItem("tokens", results.config.data)
         window.location.assign("Fake_App");
       })
       .catch((error) => {
@@ -295,6 +305,9 @@ function App() {
               addCart={addCart}
               cart={cart}
               user={user}
+              handleLogout={handleLogout}
+              authTokens={authTokens}
+              
             />
           }
         />
@@ -361,7 +374,8 @@ function App() {
                                            handlePassword={handlePassword} 
                                            email={email} 
                                            password={password}
-                                           handleApi={handleApi} />} />
+                                           handleApi={handleApi} 
+                                           handleLogout ={handleLogout}/>} />
       </Routes>
 
     </>

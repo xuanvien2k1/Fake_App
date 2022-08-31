@@ -3,13 +3,17 @@
 function Logo() {
   return (
     <div className="logo">
-      <h1 className="logo-color" onClick={() => {window.location.reload();}}>
-       VIN STORE
+      <img src="https://www.orbs.com/assets/img/common/logo.svg" alt="..." />
+      &nbsp;
+      <h1
+        className="logo-color"
+        onClick={() => {
+          window.location.reload();
+        }}
+      >
+        VIN STORE
       </h1>
     </div>
   );
 }
 export default Logo;
-
-
-

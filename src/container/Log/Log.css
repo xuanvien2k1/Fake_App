@@ -47,6 +47,7 @@ form {
 .loginSignupTemplate {
     display: flex;
     padding-top: 124px;
+    background-color: #fcf8fd;
 }
 .illustration {
     display: flex;
