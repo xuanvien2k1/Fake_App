@@ -24,7 +24,7 @@ function Cart({
             alt="..."
           />
           <p>Không có gì hết nha!</p>
-          <Link to="/Fake_App">
+          <Link to="/">
             <button className="btn-buynow">Mua Ngay</button>
           </Link>
         </div>

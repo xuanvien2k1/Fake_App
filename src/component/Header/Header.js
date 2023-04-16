@@ -28,11 +28,11 @@ function Header({ cart, user, authTokens, setTokens, handleLogout }) {
             </button>
 
             <div class="dropdown-content">
-              <Link to="/Fake_App">
+              <Link to="/">
                 <p className="login">Home</p>
               </Link>
               <div>
-                {authTokens ? (
+                {/* {authTokens ? (
                   <Link to="/login" onClick={handleLogout}>
                     Logout
                   </Link>
@@ -40,7 +40,7 @@ function Header({ cart, user, authTokens, setTokens, handleLogout }) {
                   <Link to="/login">
                     <p className="logout">Login</p>
                   </Link>
-                )}
+                )} */}
                 {/* <Link to="/login">
                   <p className="logout">Login</p>
                 </Link> */}

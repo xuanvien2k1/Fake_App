@@ -14,7 +14,7 @@ function SuccessLogIn({ closeNoticeLogIn, show }) {
           <div className="content-add-cart">
             <h3>Thông báo</h3>
             <p>Đăng nhập Thành Công !</p>
-            <Link to="/Fake_App">
+            <Link to="/">
               <button className="left" onClick={closeNoticeLogIn}>
                 OK
               </button>
